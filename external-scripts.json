@@ -1,10 +1,7 @@
 [
   "hubot-diagnostics",
-  "hubot-dogeme",
   "hubot-help",
-  "hubot-maps",
   "hubot-ambush",
-  "hubot-pugme",
   "hubot-giphy",
   "hubot-redis-brain",
   "hubot-rules",
@@ -12,6 +9,5 @@
   "hubot-standup-alarm",
   "hubot-thank-you",
   "hubot-business-cat",
-  "hubot-victory",
-  "hubot-retro"
+  "hubot-victory"
 ]
