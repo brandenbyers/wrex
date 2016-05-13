@@ -1,9 +1,7 @@
 [
   "hubot-diagnostics",
   "hubot-dogeme",
-  "hubot-google-translate",
   "hubot-help",
-  "hubot-jiralink-script",
   "hubot-maps",
   "hubot-ambush",
   "hubot-pugme",
