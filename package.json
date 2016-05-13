@@ -14,6 +14,7 @@
     "hubot-purecloud": "git+https://git@github.com/rbrcurtis/hubot-purecloud.git",
     "hubot-redis-brain": "0.0.3",
     "hubot-rules": "^0.1.1",
+    "hubot-scripts-stock": "^0.2.1",
     "hubot-shipit": "^0.2.0",
     "hubot-standup-alarm": "git+https://git@github.com/brandenbyers/hubot-standup-alarm",
     "hubot-thank-you": "0.0.3",
