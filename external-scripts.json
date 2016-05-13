@@ -1,0 +1,18 @@
+[
+  "hubot-diagnostics",
+  "hubot-dogeme",
+  "hubot-google-translate",
+  "hubot-help",
+  "hubot-jiralink-script",
+  "hubot-maps",
+  "hubot-ambush",
+  "hubot-pugme",
+  "hubot-redis-brain",
+  "hubot-rules",
+  "hubot-shipit",
+  "hubot-standup-alarm",
+  "hubot-thank-you",
+  "hubot-business-cat",
+  "hubot-victory",
+  "hubot-retro"
+]

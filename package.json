@@ -1,0 +1,33 @@
+{
+  "name": "hubot",
+  "version": "0.0.0",
+  "private": true,
+  "author": "brandenbyers <branden@brandenbyers.com>",
+  "description": "Directory Bot",
+  "dependencies": {
+    "hubot": "^2.13.2",
+    "hubot-ambush": "0.0.3",
+    "hubot-business-cat": "^1.5.0",
+    "hubot-capture": "git+https://git@github.com/brandenbyers/hubot-capture.git",
+    "hubot-diagnostics": "0.0.1",
+    "hubot-dogeme": "^1.0.0",
+    "hubot-google-images": "^0.1.5",
+    "hubot-google-translate": "^0.2.0",
+    "hubot-help": "^0.1.1",
+    "hubot-jiralink-script": "git+https://git@github.com/rbrcurtis/hubot-jiralink-script.git",
+    "hubot-maps": "0.0.2",
+    "hubot-pugme": "^0.1.0",
+    "hubot-purecloud": "git+https://git@github.com/rbrcurtis/hubot-purecloud.git",
+    "hubot-redis-brain": "0.0.3",
+    "hubot-retro": "^1.0.4",
+    "hubot-rules": "^0.1.1",
+    "hubot-scripts": "^2.5.16",
+    "hubot-shipit": "^0.2.0",
+    "hubot-standup-alarm": "git+https://git@github.com/brandenbyers/hubot-standup-alarm",
+    "hubot-thank-you": "0.0.3",
+    "hubot-victory": "^1.3.0"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
