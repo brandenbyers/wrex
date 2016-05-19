@@ -5,6 +5,8 @@
   "author": "brandenbyers <branden@brandenbyers.com>",
   "description": "Directory Bot",
   "dependencies": {
+    "chrono-node": "^1.2.3",
+    "cron": "^1.1.0",
     "hubot": "^2.13.2",
     "hubot-ambush": "0.0.3",
     "hubot-business-cat": "^1.5.0",
@@ -18,7 +20,9 @@
     "hubot-shipit": "^0.2.0",
     "hubot-standup-alarm": "git+https://git@github.com/brandenbyers/hubot-standup-alarm",
     "hubot-thank-you": "0.0.3",
-    "hubot-victory": "^1.3.0"
+    "hubot-victory": "^1.3.0",
+    "moment": "^2.13.0",
+    "underscore": "^1.8.3"
   },
   "engines": {
     "node": "0.10.x"

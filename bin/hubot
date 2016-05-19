@@ -24,7 +24,7 @@ Options =
   create:      process.env.HUBOT_CREATE  or false
   enableHttpd: process.env.HUBOT_HTTPD   or true
   scripts:     process.env.HUBOT_SCRIPTS or []
-  name:        process.env.HUBOT_NAME    or "Hubot"
+  name:        process.env.HUBOT_NAME    or "Wrex"
   path:        process.env.HUBOT_PATH    or "."
   configCheck: false
 

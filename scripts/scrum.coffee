@@ -8,15 +8,6 @@
 # Configuration:
 #  HUBOT_STANDUP_PREPEND
 #
-# Commands:
-#   hubot standup help - See a help document explaining how to use.
-#   hubot create standup hh:mm - Creates a standup at hh:mm every weekday for this room
-#   hubot create standup hh:mm UTC+2 - Creates a standup at hh:mm every weekday for this room (relative to UTC)
-#   hubot list standups - See all standups for this room
-#   hubot list standups in every room - See all standups in every room
-#   hubot delete hh:mm standup - If you have a standup at hh:mm, deletes it
-#   hubot delete all standups - Deletes all standups for this room.
-#
 # Dependencies:
 #   underscore
 #   cron
@@ -59,24 +50,11 @@ module.exports = (robot) ->
   # Returns all standups.
   getStandups = ->
     standups = []
-    # mobileRoom = {
-    #   time: '13:55'
-    #   room: '56a11fb226167219f84c4252@conference.example.com'
-    #   utc: utc
-    # }
-    myRoom = {
-      time: '19:30'
-      room: 'branden.byers@inin.com'
+    mobileRoom = {
+      time: '13:55'
+      room: '56a11fb226167219f84c4252@conference.example.com'
     }
-    myRoom2 = {
-      time: '19:15'
-      room: 'branden.byers@inin.com'
-    }
-    myRoom3 = {
-      time: '19:20'
-      room: 'branden.byers@inin.com'
-    }
-    standups.push myRoom myRoom2 myRoom3
+    standups.push mobileRoom
     return standups
 
   # Returns just standups for a given room.
@@ -167,55 +145,4 @@ module.exports = (robot) ->
 
   # Check for standups that need to be fired, once a minute
   # Monday to Friday.
-  new cronJob('1 * * * * 1-5', checkStandups, null, true)
-
-  robot.respond /create standup (.{3,})$/i, (msg) ->
-    naturalTime = msg.match[1]
-    timeStamp = chrono.parseDate(naturalTime)
-    momentTime = moment(timeStamp)
-    minutes = ''
-    if timeStamp.getMinutes() < 10
-      minutes = '0' + timeStamp.getMinutes().toString()
-    else
-      minutes = timeStamp.getMinutes().toString()
-    time = timeStamp.getHours().toString() + ':' + minutes
-    console.log '######################################'
-    console.log 'NATURAL TIME:', naturalTime
-    console.log 'TIME STAMP:', timeStamp
-    console.log '######################################'
-    room = findRoom(msg)
-    saveStandup room, time
-    msg.send 'Ok, from now on I\'ll remind this room to do a standup every weekday at ' + momentTime.format('h:mm A') + ' Eastern Time.'
-
-  robot.respond /create standup ((?:[01]?[0-9]|2[0-4]):[0-5]?[0-9]) UTC([+-][0-9])$/i, (msg) ->
-    time = msg.match[1]
-    utc = msg.match[2]
-    room = findRoom(msg)
-    saveStandup room, time, utc
-    msg.send 'Ok, from now on I\'ll remind this room to do a standup every weekday at ' + time + ' UTC' + utc
-
-  robot.respond /list standups$/i, (msg) ->
-    standups = getStandupsForRoom(findRoom(msg))
-    if standups.length == 0
-      msg.send 'Well this is awkward. You don\'t have any standups set :-/'
-    else
-      standupsText = [ 'Here are your standups:' ].concat(_.map(standups, (standup) ->
-        if standup.utc
-          standup.time + ' UTC' + standup.utc
-        else
-          standup.time + ' ET'
-      ))
-      msg.send standupsText.join('\n')
-
-  robot.respond /standup help/i, (msg) ->
-    message = []
-    message.push 'I can remind you to do your daily standup!'
-    message.push 'Use me to create a standup, and then I\'ll post in this room every weekday at the time you specify. Here\'s how:'
-    message.push ''
-    message.push robot.name + ' create standup hh:mm - I\'ll remind you to standup in this room at hh:mm every weekday.'
-    message.push robot.name + ' create standup hh:mm UTC+2 - I\'ll remind you to standup in this room at hh:mm every weekday.'
-    message.push robot.name + ' list standups - See all standups for this room.'
-    message.push robot.name + ' list standups in every room - Be nosey and see when other rooms have their standup.'
-    message.push robot.name + ' delete hh:mm standup - If you have a standup at hh:mm, I\'ll delete it.'
-    message.push robot.name + ' delete all standups - Deletes all standups for this room.'
-    msg.send message.join('\n')
+  new cronJob('1 * * * * 1,3-5', checkStandups, null, true)
