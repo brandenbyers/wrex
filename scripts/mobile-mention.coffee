@@ -12,11 +12,13 @@ module.exports = (robot) ->
     name = nameWithDot.split('.').join(' ')
     nameCap = name.replace(/(^|\s)[a-z]/g, (f) -> f.toUpperCase())
 
-    str = "> ###### [@#{nameCap}](#/person/abcdefghijklmnopqrstuv) said
+    str = """
+          > ###### [@#{nameCap}](#/person/abcdefghijklmnopqrstuv) said
           > #{message}
 
           [](#/person/57350c17a6a8301c3de8b941) [](#/person/54f07909d96de71e0a552740)
-          Yo mobile team! #{nameCap} said something that you all should read."
+          Yo mobile team! #{nameCap} said something that you all should read.
+          """
 
     return str
 
