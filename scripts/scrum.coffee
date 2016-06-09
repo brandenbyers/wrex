@@ -52,7 +52,7 @@ module.exports = (robot) ->
     standups = []
     mobileRoom = {
       time: '13:55'
-      room: '56a11fb226167219f84c4252@conference.example.com'
+      room: '56a11fb226167219f84c4252@conference.inin.com'
     }
     standups.push mobileRoom
     return standups
