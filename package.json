@@ -1,6 +1,9 @@
 {
   "name": "hubot",
   "version": "0.0.0",
+  "scripts": {
+    "start": "node node_modules/coffee-script/bin/coffee node_modules/hubot/bin/hubot --adapter purecloud --alias wrex"
+  },
   "private": true,
   "author": "brandenbyers <branden@brandenbyers.com>",
   "description": "Directory Bot",
