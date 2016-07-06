@@ -23,10 +23,20 @@ module.exports = (robot) ->
 
     return str
 
+  android = [
+    "[@Dupuis, Brian](#/person/53a2ed209cfde35e23298300) [@Zhang, Derrick](#/person/561fcf4e3e0d3317a49d846f) [@Whitehead, Carlton](#/person/53a2ed3e9cfde35e2329840e) http://s2.dmcdn.net/TJqPZ/x240-slL.jpg",
+    "[@Dupuis, Brian](#/person/53a2ed209cfde35e23298300) [@Zhang, Derrick](#/person/561fcf4e3e0d3317a49d846f) [@Whitehead, Carlton](#/person/53a2ed3e9cfde35e2329840e) https://i.ytimg.com/vi/czhDhxFfZsM/maxresdefault.jpg"
+    "[@Dupuis, Brian](#/person/53a2ed209cfde35e23298300) [@Zhang, Derrick](#/person/561fcf4e3e0d3317a49d846f) [@Whitehead, Carlton](#/person/53a2ed3e9cfde35e2329840e) http://www.cat-gifs.com/w3/Artistic-CAT-GIF-Funny-cat-sticking-out-his-cute-pink-tongue-Trompe-l-oeil-effect.gif"
+    "[@Dupuis, Brian](#/person/53a2ed209cfde35e23298300) [@Zhang, Derrick](#/person/561fcf4e3e0d3317a49d846f) [@Whitehead, Carlton](#/person/53a2ed3e9cfde35e2329840e) http://tailandfur.com/wp-content/uploads/2016/03/40-Scary-and-Funny-Cat-Pictures-Feature-Image.jpg"
+  ]
+
   robot.hear /@mobile/i, (msg) ->
     console.log 'msg', msg
     console.log 'msg.message.text', msg.message.text
     console.log 'msg.message.user.name', msg.message.user.name
     console.log 'msg.message.user', msg.message.user
     msg.send mention(msg.message.user.name, msg.message.text)
+
+  robot.hear /@android/i, (msg) ->
+    msg.send msg.random android
 
