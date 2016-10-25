@@ -43,3 +43,4 @@ module.exports = (robot) ->
 
   robot.hear tayExpression, (msg) ->
     msg.send msg.random tay
+    robot.messageRoom "branden.byers@inin.com", "This is a test"

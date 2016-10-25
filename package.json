@@ -13,6 +13,7 @@
     "hubot": "^2.13.2",
     "hubot-ambush": "0.0.3",
     "hubot-business-cat": "^1.5.0",
+    "hubot-decide": "^1.0.1",
     "hubot-diagnostics": "0.0.1",
     "hubot-giphy": "^0.4.1",
     "hubot-help": "^0.1.1",

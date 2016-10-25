@@ -9,16 +9,19 @@
 #   calm down | simmer down | that escalated quickly - Reply with Manatee
 #   ALL CAPS | LONGCAPS - Reply with Manatee
 
-module.exports = (robot) ->
-  manatee = ->
-    num = Math.floor(Math.random() * 30) + 1
-    "http://calmingmanatee.com/img/manatee#{ num }.jpg"
-
-  robot.respond /manatee|calm( me)?/i, (msg) -> msg.send manatee()
-
-  robot.hear /calm down|simmer down|that escalated quickly/i, (msg) ->
-    msg.send manatee()
-
-  robot.hear ///(\b([A-Z]{2,}\s+)([A-Z]{2,})\b)|(\b[A-Z]{10,}\b)///, (msg) -> 
-    if msg.message.text.replace(/[^a-z]/gi, '').match /^[A-Z]+$/
-      msg.send manatee()
+# module.exports = (robot) ->
+#   manatee = ->
+#     num = Math.floor(Math.random() * 30) + 1
+#     "http://calmingmanatee.com/img/manatee#{ num }.jpg"
+#
+#   robot.respond /manatee|calm( me)?/i, (msg) -> msg.send manatee()
+#
+#   robot.hear /calm down|simmer down|that escalated quickly/i, (msg) ->
+#     msg.send manatee()
+#
+#   robot.hear ///
+#     (\b([A-Z]{2,}\s+)([A-Z]{2,})\b)|
+#     (\b[A-Z]{5,}\b)
+#   ///, (msg) ->
+#     msg.send manatee()
+#     robot.messageRoom 'brian.dupuis@inin.com', manatee()
